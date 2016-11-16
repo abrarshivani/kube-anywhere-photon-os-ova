@@ -1,0 +1,13 @@
+[Unit]
+Description=Etcd Server
+After=network.target
+
+[Service]
+Type=notify
+WorkingDirectory=/var/lib/etcd/
+ExecStart=/bin/bash -c "/usr/bin/etcd --listen-client-urls http://0.0.0.0:4000 --listen-peer-urls http://0.0.0.0:4001 --advertise-client-urls http://0.0.0.0:4000"
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
