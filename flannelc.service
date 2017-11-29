@@ -2,6 +2,7 @@
 Description=Network fabric for containers
 Documentation=https://github.com/coreos/flannel
 Before=docker.service
+After=network-online.target
 
 [Service]
 Type=notify
