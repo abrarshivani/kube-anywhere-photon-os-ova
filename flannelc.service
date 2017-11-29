@@ -12,7 +12,7 @@ EnvironmentFile=-/etc/default/flannel
 LimitNOFILE=65536
 ExecStart=/bin/flanneld -etcd-endpoints=${ETCD_ENDPOINTS} --ip-masq=true
 # Update docker options
-ExecStartPost=/opt/bin/mk-docker-opts.sh
+ExecStartPost=/etc/mk-docker-opts.sh
 
 [Install]
 WantedBy=multi-user.target
